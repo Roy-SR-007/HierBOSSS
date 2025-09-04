@@ -10,6 +10,34 @@
 [![Pull Requests](https://img.shields.io/github/issues-pr/Roy-SR-007/HierBOSSS)](https://github.com/Roy-SR-007/HierBOSSS/pulls)
 
 <p align="center">
-  <img src="hierbosss_tree.gif" alt="HierBOSSS_logo" width="650"/>
+  <img src="hierbosss_tree.gif" alt="HierBOSSS_logo" width="800"/>
 </p>
+
+This repository holds the source code and implementation of *Hierarchical Bayesian Operator-induced Symbolic Regression Trees for Structural Learning of Scientific Expressions* (**HierBOSSS**) proposed in Roy, S., Dey, P., Pati, D., & Mallick, B. K. (2025), *Hierarchical Bayesian Operator-induced Symbolic Regression Trees for Structural Learning of Scientific Expressions*.
+
+---
+
+## Developers and Maintainers
+
+**Somjit Roy**  
+Department of Statistics  
+Texas A&M University, College Station, TX, USA  
+
+📧 Email: [sroy_123@tamu.edu](mailto:sroy_123@tamu.edu)  
+🌐 Website: [https://roy-sr-007.github.io](https://roy-sr-007.github.io)
+
+**Pritam Dey**  
+Department of Statistics  
+Texas A&M University, College Station, TX, USA  
+
+📧 Email: [pritam.dey@tamu.edu](mailto:pritam.dey@tamu.edu)  
+🌐 Website: [https://pritamdey.github.io](https://pritamdey.github.io)
+
+---
+
+## NEWS
+
+- This is the first official release of `HierBOSSS v1.0.0` on `GitHub`.
+
+---
 
