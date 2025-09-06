@@ -141,3 +141,66 @@ for(d in 1:25) {
 ## saving the runtime for iBART
 write.csv(runtime_iBART, file="runtimes/simulated_example/runtime_iBART.csv")
 
+## boxplot of the runtimes of HierBOSSS and competing methods across 25 repetitions
+
+runtime_HierBOSSS = read.csv("runtimes/simulated_example/runtime_HierBOSSS.csv")
+runtime_HierBOSSS = runtime_HierBOSSS$x
+runtime_iBART = read.csv("runtimes/simulated_example/runtime_iBART.csv")
+runtime_iBART = runtime_iBART$x
+runtime_BSR = read.csv("runtimes/simulated_example/runtime_BSR.csv")
+runtime_BSR = runtime_BSR$runtime
+runtime_QLattice = read.csv("runtimes/simulated_example/runtime_QLattice.csv")
+runtime_QLattice = runtime_QLattice$runtime
+
+library(ggplot2)
+
+# build data (each vector length = 25)
+rt_df <- data.frame(
+  runtime = c(as.numeric(runtime_HierBOSSS),
+              as.numeric(runtime_BSR),
+              as.numeric(runtime_iBART),
+              as.numeric(runtime_QLattice)),
+  method = factor(rep(c("HierBOSSS","BSR","iBART","QLattice"),
+                      each = length(runtime_HierBOSSS)),
+                  levels = c("HierBOSSS","BSR","iBART","QLattice"))
+)
+
+# pastel palette (as in your image)
+pal <- c(
+  "BSR"       = "#66C2A5",  # teal
+  "HierBOSSS" = "#FC8D62",  # orange
+  "iBART"     = "#8DA0CB",  # periwinkle
+  "QLattice"  = "#E78AC3"   # pink
+)
+
+main_title <- "Runtime across methods (n = 25 each)"  # change to your exact title
+
+p <- ggplot(rt_df, aes(x = method, y = runtime, fill = method, color = method)) +
+  geom_boxplot(outlier.shape = NA, width = 0.6, alpha = 0.9) +
+  # black median line overlay
+  stat_summary(fun = median, geom = "crossbar", width = 0.6,
+               color = "black", linewidth = 0.5) +
+  geom_jitter(width = 0.15, alpha = 0.55, size = 1.8) +
+  scale_fill_manual(values = pal) +
+  scale_color_manual(values = pal) +
+  scale_y_continuous(trans="log",labels = scales::number_format(accuracy = 1)) +
+  labs(
+    #title = expression(paste(
+    #  "Runtime (in log-scale) for learning: ",
+    #  y == 5*(x[1] + x[2])*x[3] + epsilon, ", ",
+    #  sigma^2 == 1.50
+    #)),
+    x = "Method",
+    y = "Runtime (in log-seconds)"
+  ) +
+  theme_minimal(base_size = 13) +
+  theme(
+    legend.title = element_blank(),
+    legend.position = "right",
+    plot.title = element_text(hjust = 0.5)
+  )
+
+print(p)
+
+# Save figure
+ggsave("runtimes/simulated_example/runtime_boxplot.png", p, dpi = 300)
