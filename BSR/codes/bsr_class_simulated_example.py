@@ -7,9 +7,9 @@ Created on Thu Dec  3 19:40:29 2020
 """
 
 import os
-from bsr.funcs import Operator, Node
-from bsr.funcs import grow, genList, shrink, upgOd, allcal, display, getHeight, getNum, numLT, upDepth, Express, fStruc
-from bsr.funcs import ylogLike, newProp, Prop, auxProp
+from .funcs import Operator, Node
+from .funcs import grow, genList, shrink, upgOd, allcal, display, getHeight, getNum, numLT, upDepth, Express, fStruc
+from .funcs import ylogLike, newProp, Prop, auxProp
 
 
 import numpy as np
