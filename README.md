@@ -182,16 +182,16 @@ For detailed analysis of the simulated example, see:
 
 </div>
 
-<div align="center">
-  <figure style="display:inline-block; margin:0 8px; vertical-align:top; max-width:48%;">
-    <img src="results/simulated_example/rmse_boxplot_25_HierBOSSS_BSR_QLattice_iBART_horizontal.png" alt="rmse_boxplot" width="380"/>
-    <figcaption><em>Figure 3: RMSE of over 25 data regenrations.</em></figcaption>
-  </figure>
-  <figure style="display:inline-block; margin:0 8px; vertical-align:top; max-width:48%;">
-    <img src="results/simulated_example/Expression_Complexity_HierBOSSS_BSR_QLattice.png" alt="expression_complexity" width="380"/>
-    <figcaption><em>Figure 4: Expression complexity.</em></figcaption>
-  </figure>
-</div>
+
+<figure align="center">
+  <img src="results/simulated_example/rmse_boxplot_25_HierBOSSS_BSR_QLattice_iBART_horizontal.png" alt="rmse_boxplot" width="380"/>
+  <figcaption><em>Figure 3: RMSE of over 25 data regenrations.</em></figcaption>
+</figure>
+
+<figure align="center">
+  <img src="results/simulated_example/Expression_Complexity_HierBOSSS_BSR_QLattice.png" alt="expression_complexity" width="380"/>
+  <figcaption><em>Figure 4: Expression complexity.</em></figcaption>
+</figure>
 
 <figure align="center">
   <img src="GED/GED_boxplot.png" alt="GED_boxplot" width="380"/>
