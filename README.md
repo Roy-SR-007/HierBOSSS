@@ -50,13 +50,19 @@ Texas A&M University, College Station, TX, USA
 
 Despite the large-scale popularity of symbolic regression in learning hidden scientific mysteries, contributions to symbolic regression majorly centers around algorithmic and heuristic approaches (*genetic programming* ([Willis et al., 1997](https://ieeexplore.ieee.org/document/681044); [Davidson et al, 1999, 2003](https://doi.org/10.2166/hydro.1999.0010)), *deep symbolic regression* (DSR) ([Cranmer et al., 2020](https://proceedings.neurips.cc/paper_files/paper/2020/file/c9f2f917078bd2db12f23c3b413d9cba-Paper.pdf); [Petersen et al., 2021](https://openreview.net/forum?id=m5Qsh0kBQG)), *AI-Feynman* ([Udrescu and Tegmark, 2020](https://www.science.org/doi/abs/10.1126/sciadv.aay2631)), *QLattice* ([Brolos et al., 2021](https://arxiv.org/abs/2104.05417)), *SISSO* ([Ouyang et al., 2018](https://link.aps.org/doi/10.1103/PhysRevMaterials.2.083802)), and *iBART* ([Shengbin et al., 2024](https://doi.org/10.1080/01621459.2023.2294527))). The current literature still lacks a fully model-based framework that enables principled model selection and uncertainty quantification. To address this gap, we develop **Hier**archical **B**ayesian **O**perator-induced **S**ymbolic regression trees for **S**tructural learning of **S**cientific expressions (HierBOSSS), which advances Bayesian SciML and performs symbolic regression through a Bayesian lens by using symbolic tree representation of scientific symbolic expressions (see Figure 1 below) within a hierarchical framework.
 
+<br><br>
+
 <figure align="center">
   <img src="assets/symbolic_tree_representation.png" alt="symbolic_tree_representation" width="800"/>
   <figcaption><em>Figure 1: Symbolic tree representation of scientific expressions.</em></figcaption>
 </figure>
 
+<br><br>
+
 
 **HierBOSSS** models symbolic expressions through an operator-induced sum-of-symbolic trees. Conjugate priors are assigned to model regression parameters, while a regularizing prior is designed for the individual symbolic tree structures. To perform inference from the HierBOSSS-induced posterior distribution, we develop an efficient Metropolis-within-partially-collapsed Gibbs Markov chain Monte Carlo (MCMC) sampling algorithm. This GitHub repository showcases the success of HierBOSSS in discovering interpretable scientific laws. Specifically, we demonstrate HierBOSSS' ability to recover and learn well-known physics-based Feynman equations and identify meaningful descriptors in single-atom catalysis. Moreover, HierBOSSS consistently outperforms state-of-the-art symbolic regression methods (which often suffer from training data size, noise, and overly complicated symbolic expressions), offering advantages both in symbolic expression discovery and computational efficiency.
+
+<br><br>
 
 <figure align="center">
   <img src="assets/HierBOSSS_comparison.png" alt="HierBOSSS_comparison" width="800"/>
@@ -182,28 +188,35 @@ For detailed analysis of the simulated example, see:
 
 </div>
 
+<br><br>
 
 <figure align="center">
   <img src="results/simulated_example/rmse_boxplot_25_HierBOSSS_BSR_QLattice_iBART_horizontal.png" alt="rmse_boxplot" width="800"/>
   <figcaption><em>Figure 3: RMSE of over 25 data regenrations.</em></figcaption>
 </figure>
 
+<br><br>
+
 <figure align="center">
   <img src="results/simulated_example/Expression_Complexity_HierBOSSS_BSR_QLattice.png" alt="expression_complexity" width="800"/>
   <figcaption><em>Figure 4: Expression complexity.</em></figcaption>
 </figure>
 
+<br><br>
+
 <figure align="center">
-  <img src="GED/GED_boxplot.png" alt="GED_boxplot" width="800"/>
+  <img src="assets/GED_Boxplot.png" alt="GED_boxplot" width="800"/>
   <figcaption><em>Figure 5: Structural proximity with the true simulated example.</em></figcaption>
 </figure>
+
+<br><br>
 
 <figure align="center">
   <img src="runtimes/simulated_example/runtime_boxplot.png" alt="runtime_comparison" width="800"/>
   <figcaption><em>Figure 6: Runtime comparisons.</em></figcaption>
 </figure>
 
-
+<br><br>
 
 2. **Learning Feynman Equations**
 
@@ -217,10 +230,14 @@ For detailed analysis of the simulated example, see:
 
 [HierBOSSS_Feynman_equations.R](./HierBOSSS_Feynman_equations.R) comprises the full implementation of HierBOSSS and iBART under different experimental settings when applied to learn the Feynman equations. Demonstration of the competing methods are available in [BSR](./BSR/) for Bayesian symbolic regression (BSR) and [QLattice](./QLattice/) for QLattice.
 
+<br><br>
+
 <figure align="center">
   <img src="assets/Feynman_expressions.png" alt="Feynman_expressions" width="800"/>
   <figcaption><em>Figure 7: HierBOSSS learns the symbolic tree structures of the scientific laws defined by Feynman equations.</em></figcaption>
 </figure>
+
+<br><br>
 
 3. **Single-atom Catalysis Data Study**
 
@@ -230,11 +247,14 @@ For detailed analysis of the simulated example, see:
 
 Explore [single_atom_data_analysis](./single_atom_data_analysis/), [BSR/Single-Atom Catalysis for BSR.ipynb](./BSR/Single-Atom%20Catalysis%20for%20BSR%20test.ipynb), and [QLattice/Single-Atom catalysis.ipynb](./QLattice/Single-Atom%20catalysis.ipynb) for the complete data study.
 
+<br><br>
 
 <figure align="center">
   <img src="single_atom_data_analysis/boxplot_ooRMSE.png" alt="ooRMSE_boxplot" width="800"/>
   <figcaption><em>Figure 8:  Out-of-sample RMSE values across different symbolic trees K.</em></figcaption>
 </figure>
+
+<br><br>
 
 <figure align="center">
     <img src="assets/single_atom_expressions.png" alt="single_atom_expressions" width="800"/>
