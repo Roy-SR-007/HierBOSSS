@@ -184,22 +184,22 @@ For detailed analysis of the simulated example, see:
 
 
 <figure align="center">
-  <img src="results/simulated_example/rmse_boxplot_25_HierBOSSS_BSR_QLattice_iBART_horizontal.png" alt="rmse_boxplot" width="380"/>
+  <img src="results/simulated_example/rmse_boxplot_25_HierBOSSS_BSR_QLattice_iBART_horizontal.png" alt="rmse_boxplot" width="800"/>
   <figcaption><em>Figure 3: RMSE of over 25 data regenrations.</em></figcaption>
 </figure>
 
 <figure align="center">
-  <img src="results/simulated_example/Expression_Complexity_HierBOSSS_BSR_QLattice.png" alt="expression_complexity" width="380"/>
+  <img src="results/simulated_example/Expression_Complexity_HierBOSSS_BSR_QLattice.png" alt="expression_complexity" width="800"/>
   <figcaption><em>Figure 4: Expression complexity.</em></figcaption>
 </figure>
 
 <figure align="center">
-  <img src="GED/GED_boxplot.png" alt="GED_boxplot" width="380"/>
+  <img src="GED/GED_boxplot.png" alt="GED_boxplot" width="800"/>
   <figcaption><em>Figure 5: Structural proximity with the true simulated example.</em></figcaption>
 </figure>
 
 <figure align="center">
-  <img src="runtimes/simulated_example/runtime_boxplot.png" alt="runtime_comparison" width="380"/>
+  <img src="runtimes/simulated_example/runtime_boxplot.png" alt="runtime_comparison" width="800"/>
   <figcaption><em>Figure 6: Runtime comparisons.</em></figcaption>
 </figure>
 
@@ -232,14 +232,14 @@ Explore [single_atom_data_analysis](./single_atom_data_analysis/), [BSR/Single-A
 
 
 <figure align="center">
-  <img src="single_atom_data_analysis/boxplot_ooRMSE.png" alt="ooRMSE_boxplot" width="500"/>
+  <img src="single_atom_data_analysis/boxplot_ooRMSE.png" alt="ooRMSE_boxplot" width="800"/>
   <figcaption><em>Figure 8:  Out-of-sample RMSE values across different symbolic trees K.</em></figcaption>
 </figure>
 
 <figure align="center">
-    <img src="assets/single_atom_expressions.png" alt="single_atom_expressions" width="380"/>
+    <img src="assets/single_atom_expressions.png" alt="single_atom_expressions" width="800"/>
     <figcaption><em>Figure 9: Some important descriptors learned by HierBOSSS influencing the binding energy in single-atom catalysis dataset.</em></figcaption>
-  </figure>
+</figure>
 
 ---
 
