@@ -183,22 +183,22 @@ For detailed analysis of the simulated example, see:
 </div>
 
 <div align="center">
-  <figure style="display:inline-block; margin:10px;">
+  <figure style="display:inline-block; margin:0 8px; vertical-align:top; max-width:48%;">
     <img src="results/simulated_example/rmse_boxplot_25_HierBOSSS_BSR_QLattice_iBART_horizontal.png" alt="rmse_boxplot" width="380"/>
     <figcaption><em>Figure 3: RMSE of HierBOSSS and competing methods over 25 data regenrations.</em></figcaption>
   </figure>
-  <figure style="display:inline-block; margin:10px;">
+  <figure style="display:inline-block; margin:0 8px; vertical-align:top; max-width:48%;">
     <img src="results/simulated_example/Expression_Complexity_HierBOSSS_BSR_QLattice.png" alt="expression_complexity" width="380"/>
     <figcaption><em>Figure 4: Expression complexity of learned symbolic expressions by HierBOSSS and BSR.</em></figcaption>
   </figure>
 </div>
 
 <div align="center">
-  <figure style="display:inline-block; margin:10px;">
+  <figure style="display:inline-block; margin:0 8px; vertical-align:top; max-width:48%;">
     <img src="GED/GED_boxplot.png" alt="GED_boxplot" width="380"/>
     <figcaption><em>Figure 5: Structural proximity with the true simulated example.</em></figcaption>
   </figure>
-  <figure style="display:inline-block; margin:10px;">
+  <figure style="display:inline-block; margin:0 8px; vertical-align:top; max-width:48%;">
     <img src="runtimes/simulated_example/runtime_boxplot.png" alt="runtime_comparison" width="380"/>
     <figcaption><em>Figure 6: Runtime comparisons.</em></figcaption>
   </figure>
@@ -231,11 +231,11 @@ For detailed analysis of the simulated example, see:
 Explore [single_atom_data_analysis](./single_atom_data_analysis/), [BSR/Single-Atom Catalysis for BSR.ipynb](./BSR/Single-Atom%20Catalysis%20for%20BSR%20test.ipynb), and [QLattice/Single-Atom catalysis.ipynb](./QLattice/Single-Atom%20catalysis.ipynb) for the complete data study.
 
 <div align="center">
-  <figure style="display:inline-block; margin:10px;">
+  <figure style="display:inline-block; margin:0 8px; vertical-align:top; max-width:48%;">
     <img src="single_atom_data_analysis/boxplot_ooRMSE.png" alt="ooRMSE_boxplot" width="380"/>
     <figcaption><em>Figure 8: Out-of-sample RMSE values across different symbolic trees K.</em></figcaption>
   </figure>
-  <figure style="display:inline-block; margin:10px;">
+  <figure style="display:inline-block; margin:0 8px; vertical-align:top; max-width:48%;">
     <img src="assets/single_atom_expressions.png" alt="single_atom_expressions" width="380"/>
     <figcaption><em>Figure 9: Some important descriptors learned by HierBOSSS influencing the binding energy in single-atom catalysis dataset.</em></figcaption>
   </figure>
