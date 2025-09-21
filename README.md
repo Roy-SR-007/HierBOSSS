@@ -171,7 +171,7 @@ We present three broad applications of HierBOSSS and investigate its ability in 
 
 1. **A Simulated Example**
 
-* Data-generating symbolic expression: $\mathbf{y} = 5(x_1 + x_2) + \epsilon,\epsilon \sim \mathcal{N}_n(0_n, \sigma^{2} I_n)$; with $x_1 \sim \mathcal{N}_n(4\mathbf{1}_n, I_n), x_2\sim \mathcal{N}_n(6\mathbf{1}_n, I_n), x_3\sim \mathcal{N}_n(8\mathbf{1}_n, I_n)$.
+* Data-generating symbolic expression: $\mathbf{y} = 5(x_1 + x_2)x_3 + \epsilon,\epsilon \sim \mathcal{N}_n(0_n, \sigma^{2} I_n)$; with $x_1 \sim \mathcal{N}_n(4\mathbf{1}_n, I_n), x_2\sim \mathcal{N}_n(6\mathbf{1}_n, I_n), x_3\sim \mathcal{N}_n(8\mathbf{1}_n, I_n)$.
 
 * HierBOSSS accurately recovers the true data-generating expression while maintaining a low RMSE (see Figure 3).
 
