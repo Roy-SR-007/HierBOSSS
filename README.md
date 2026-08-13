@@ -1,8 +1,8 @@
 <div align="center">
 
-# `BayeSym𝕏`
+# `HierBOSSS`
 
-### `Baye`sian `Sym`bolic regression forests for e`𝕏`pression discovery
+### `Hier`archical `B`ayesian `O`perator-induced `S`ymbolic Regression Forests for `S`tructural Discovery of `S`ymbolic Expressions
 
 <p align="center">
   <a href="https://www.python.org/">
@@ -14,36 +14,36 @@
   <a href="https://arxiv.org/abs/2509.19710">
     <img src="https://img.shields.io/badge/arXiv-2509.19710-b31b1b" alt="arXiv: 2509.19710">
   </a>
-  <a href="https://github.com/Roy-SR-007/BayeSymX/network/members">
-    <img src="https://img.shields.io/github/forks/Roy-SR-007/BayeSymX" alt="GitHub Forks">
+  <a href="https://github.com/Roy-SR-007/HierBOSSS/network/members">
+    <img src="https://img.shields.io/github/forks/Roy-SR-007/HierBOSSS" alt="GitHub Forks">
   </a>
-  <a href="https://github.com/Roy-SR-007/BayeSymX">
-    <img src="https://img.shields.io/github/repo-size/Roy-SR-007/BayeSymX" alt="Repository Size">
+  <a href="https://github.com/Roy-SR-007/HierBOSSS">
+    <img src="https://img.shields.io/github/repo-size/Roy-SR-007/HierBOSSS" alt="Repository Size">
   </a>
-  <a href="https://github.com/Roy-SR-007/BayeSymX/commits/main">
-    <img src="https://img.shields.io/github/last-commit/Roy-SR-007/BayeSymX" alt="Last Commit">
+  <a href="https://github.com/Roy-SR-007/HierBOSSS/commits/main">
+    <img src="https://img.shields.io/github/last-commit/Roy-SR-007/HierBOSSS" alt="Last Commit">
   </a>
-  <a href="https://github.com/Roy-SR-007/BayeSymX/issues">
-    <img src="https://img.shields.io/github/issues/Roy-SR-007/BayeSymX" alt="Open Issues">
+  <a href="https://github.com/Roy-SR-007/HierBOSSS/issues">
+    <img src="https://img.shields.io/github/issues/Roy-SR-007/HierBOSSS" alt="Open Issues">
   </a>
-  <a href="https://github.com/Roy-SR-007/BayeSymX/pulls">
-    <img src="https://img.shields.io/github/issues-pr/Roy-SR-007/BayeSymX" alt="Open Pull Requests">
+  <a href="https://github.com/Roy-SR-007/HierBOSSS/pulls">
+    <img src="https://img.shields.io/github/issues-pr/Roy-SR-007/HierBOSSS" alt="Open Pull Requests">
   </a>
 </p>
 
-`BayeSym𝕏` searches over forests of symbolic expression trees, ranks symbolic models across independent parallel MCMC chains, and reports an Occam's window set of learned equations. Based on Roy, S., Dey, P., Mallick, B. K., & Pati, D. *Probabilistic Symbolic Regression for Equation Discovery via Operator-induced and Regularized Symbolic Forests*. (2026+; <https://arxiv.org/abs/2509.19710>)
+`HierBOSSS` searches over forests of symbolic expression trees, ranks symbolic models across independent parallel MCMC chains, and reports an Occam's window set of learned equations. Based on Roy, S., Dey, P., Mallick, B. K., & Pati, D. *Probabilistic Symbolic Regression for Equation Discovery via Operator-induced and Regularized Symbolic Forests*. (2026+; <https://arxiv.org/abs/2509.19710>)
 
 </div>
 
 <p align="center">
-  <img src="assets/BayeSymX_logo.png" alt="Description" width="300">
+  <img src="assets/HierBOSSS_logo.png" alt="Description" width="600">
 </p>
 
 ---
 
-## Overview of the `BayeSym𝕏` model
+## Overview of the `HierBOSSS` model
 
-For a symbolic forest containing $K$ symbolic trees representing expressions (constructed recursively from features and operators), `BayeSym𝕏` models the response as
+For a symbolic forest containing $K$ symbolic trees representing expressions (constructed recursively from features and operators), `HierBOSSS` models the response as
 
 $$
 y_i = \beta_0 + \sum_{j=1}^{K}\beta_j g(x_i; T_j) + \varepsilon_i,
@@ -104,7 +104,7 @@ flowchart BT
   }
 }}%%
 flowchart LR
-    A["train data<br/>X, y"] --> B["run_bayesymx"]
+    A["train data<br/>X, y"] --> B["run_HierBOSSS"]
     B --> C["parallel<br/>MCMC chains"]
     C --> D["rank forests<br/>by log JMP"]
     D --> E["symbolic model<br/>refinement"]
@@ -131,8 +131,8 @@ flowchart LR
 Clone the repository and enter the project directory:
 
 ```bash
-git clone https://github.com/Roy-SR-007/BayeSymX.git
-cd BayeSymX
+git clone https://github.com/Roy-SR-007/HierBOSSS.git
+cd HierBOSSS
 ```
 
 Install the required packages (see below for details on required dependencies):
@@ -168,8 +168,8 @@ y = 1.25 + 2.5\exp(x_0^3) - 0.8x_1^2\sin(x_0) + \varepsilon,
 $$
 
 ```python
-# import everything from BayeSymX directory
-from BayeSymX import *
+# import everything from HierBOSSS directory
+from HierBOSSS import *
 
 # simulated data generation
 rng = np.random.default_rng(2026) # seed for data generation
@@ -186,8 +186,8 @@ indices = rng.permutation(len(X))
 train_indices = indices[:1800]
 test_indices = indices[1800:]
 
-# Configuring and fitting BayeSymX
-result_json = run_bayesymx(
+# Configuring and fitting HierBOSSS
+result_json = run_HierBOSSS(
     X_train=X[train_indices],               # train data
     y_train=y[train_indices],
     X_test=X[test_indices],                 # optional test data
@@ -220,7 +220,7 @@ Explore the complete runnable workflows in **[`example.ipynb`](example.ipynb)**.
 ## Main API
 
 ```python
-run_bayesymx(
+run_HierBOSSS(
     X_train,
     y_train,
     K,
@@ -296,14 +296,14 @@ run_bayesymx(
 | **Trace plot controls** |  |  |  |
 | `show_trace_plot` | No | `False` | Display the combined parallel-chain log-JMP trace plot |
 | `save_trace_plot` | No | `False` | Save the trace plot to a file |
-| `trace_plot_path` | No | `None` | Output file or directory; defaults to `./bayesymx_parallel_log_jmp_traces.png` when saving |
+| `trace_plot_path` | No | `None` | Output file or directory; defaults to `./HierBOSSS_parallel_log_jmp_traces.png` when saving |
 | `trace_plot_dpi` | No | `300` | Resolution, in dots per inch, used when saving the trace plot |
 
 ---
 
 ## Default prior parameters
 
-When `prior_params=None`, `BayeSym𝕏` constructs the following prior parameters automatically:
+When `prior_params=None`, `HierBOSSS` constructs the following prior parameters automatically:
 
 | Prior parameter | Default value | Meaning |
 |---|---|---|
@@ -320,7 +320,7 @@ When `prior_params=None`, `BayeSym𝕏` constructs the following prior parameter
 
 ## Default full operator set
 
-When `opset=None`, `BayeSym𝕏` considers the following full set of operators:
+When `opset=None`, `HierBOSSS` considers the following full set of operators:
 
 | Operator | Arity | Evaluation |
 |---|---:|---|
@@ -338,7 +338,7 @@ When `opset=None`, `BayeSym𝕏` considers the following full set of operators:
 Supply a restricted set when domain knowledge supports it, as below:
 
 ```python
-result_json = run_bayesymx(
+result_json = run_HierBOSSS(
     ...,
     opset=[add, mul, sin, sq],
     ...
@@ -361,7 +361,7 @@ The MCMC proposal kernel supports the following seven symbolic tree moves:
 
 ![symbolic tree moves](assets/symbolic_tree_moves_compact.png)
 
-When `move_weights=None`, `BayeSym𝕏` considers the following default move weights:
+When `move_weights=None`, `HierBOSSS` considers the following default move weights:
 
 ```python
 move_weights = {
@@ -382,7 +382,7 @@ move_weights = [1, 1, 1, 1, 1, 1, 1]
 
 ## Result schema
 
-`run_bayesymx()` returns a JSON string of results with the following hierarchy:
+`run_HierBOSSS()` returns a JSON string of results with the following hierarchy:
 
 ```text
 result
@@ -417,10 +417,10 @@ result
 
 ## Maintainers and developers
 
-**Copyright © 2026 `BayeSym𝕏` authors. All rights reserved.**
+**Copyright © 2026 `HierBOSSS` authors. All rights reserved.**
 
 [Somjit Roy](https://roy-sr-007.github.io/) and [Pritam Dey](https://pritamdey.github.io/).
 
-`BayeSym𝕏` is distributed under the terms of the [MIT License](LICENSE).
+`HierBOSSS` is distributed under the terms of the [MIT License](LICENSE).
 
 ---

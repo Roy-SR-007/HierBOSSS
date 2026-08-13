@@ -1,5 +1,5 @@
 #############################
-# utils.py file for BayeSymX
+# utils.py file for HierBOSSS
 #############################
 
 # Required imports
@@ -27,10 +27,10 @@ from pathlib import Path
 
 # Display-only branding.
 # Do not use these names for classes, modules, or imports.
-BAYESYMX_CONSOLE_LABEL = "BayeSym𝕏"
+HierBOSSS_CONSOLE_LABEL = "HierBOSSS"
 
-BAYESYMX_PLOT_LABEL = (
-    r"$\mathtt{BayeSym}\mathbb{X}$"
+HierBOSSS_PLOT_LABEL = (
+    r"$\mathtt{HierBOSSS}$"
 )
 
 add = {"name": "add", "type": 2}
@@ -88,7 +88,7 @@ def _parallel_chain_worker(args):
         report_every
     ) = args
 
-    model = BayeSymX_MCMC(
+    model = HierBOSSS_MCMC(
         X=X,
         y=y,
         K=K,
@@ -816,9 +816,9 @@ class Forest:
         return logJMP, log_forest_prior, nig
     
 
-# The BayeSymX MCMC class
+# The HierBOSSS MCMC class
 
-class BayeSymX_MCMC:
+class HierBOSSS_MCMC:
     def __init__(self, X, y, K, maxdepth, prior_params=None, add_intercept=True, wts_init=None, wts_prop=None, opset=None, ftset=None):
         # Basic data setup
         self.X = np.asarray(X, dtype=float)
@@ -1411,7 +1411,7 @@ class BayeSymX_MCMC:
             iterator = tqdm(
                 iterator,
                 total=maxiter,
-                desc=f"{BAYESYMX_CONSOLE_LABEL}-MCMC",
+                desc=f"{HierBOSSS_CONSOLE_LABEL}-MCMC",
                 leave=True,
             )
 
@@ -1519,7 +1519,7 @@ class BayeSymX_MCMC:
         thin=1,
         show_progress=False
     ):
-        model = BayeSymX_MCMC(
+        model = HierBOSSS_MCMC(
             X = self.X,
             y=self.y,
             K=self.K,
@@ -1785,7 +1785,7 @@ class BayeSymX_MCMC:
             If None, the figure is saved in the current
             working directory as:
 
-                bayesymx_parallel_log_jmp_traces.png
+                HierBOSSS_parallel_log_jmp_traces.png
 
             Examples:
 
@@ -1881,7 +1881,7 @@ class BayeSymX_MCMC:
         )
 
         axis.set_title(
-            f"{BAYESYMX_PLOT_LABEL} Parallel MCMC Trace Plot",
+            f"{HierBOSSS_PLOT_LABEL} Parallel MCMC Trace Plot",
             fontsize=15,
             fontweight="bold",
             pad=15,
@@ -1912,7 +1912,7 @@ class BayeSymX_MCMC:
 
         if save:
             default_filename = (
-                "bayesymx_parallel_log_jmp_traces.png"
+                "HierBOSSS_parallel_log_jmp_traces.png"
             )
 
             if save_path is None:
@@ -1954,7 +1954,7 @@ class BayeSymX_MCMC:
             )
 
             print(
-                f"✓ {BAYESYMX_CONSOLE_LABEL} trace plot saved to:\n"
+                f"✓ {HierBOSSS_CONSOLE_LABEL} trace plot saved to:\n"
                 f"  {saved_path}"
             )
 
@@ -2151,7 +2151,7 @@ def reduce_topk_jmp_forests(
     Parameters
     ----------
     mcmc_obj:
-        Fitted BayeSymX_MCMC object with parallel_result.
+        Fitted HierBOSSS_MCMC object with parallel_result.
     top_expr_df, top_beta_df:
         Outputs from mcmc_obj.summarize_parallel_topk_forests(top_k=...).
         If omitted, they are computed inside using top_k.

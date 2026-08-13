@@ -1,5 +1,5 @@
 #############################
-# runner file of BayeSymX
+# runner file of HierBOSSS
 #############################
 
 # required imports
@@ -88,7 +88,7 @@ def _raw_model_string(
 
 
 def _tree_to_sympy(forest, tree_id, node_address=0):
-    """Convert a BayeSymX tree directly into a SymPy expression."""
+    """Convert a HierBOSSS tree directly into a SymPy expression."""
     node = forest.trees[tree_id][node_address]
 
     if node is None:
@@ -335,8 +335,8 @@ def _result_panel_width():
 
 
 def _print_results_banner(width, color_enabled):
-    """Print the main BayeSymX results banner."""
-    title = f"{BAYESYMX_CONSOLE_LABEL}"
+    """Print the main HierBOSSS results banner."""
+    title = f"{HierBOSSS_CONSOLE_LABEL}"
     subtitle = "Summary of Results"
 
     print()
@@ -395,7 +395,7 @@ def _format_runtime(seconds, significant_digits):
 
 def _print_result_tables(output, significant_digits):
     """
-    Print an elegant BayeSymX summary and the raw/final tables.
+    Print an elegant HierBOSSS summary and the raw/final tables.
 
     Test columns are created only when every returned model contains
     test metrics. When no test set was supplied, no test diagnostic
@@ -465,7 +465,7 @@ def _print_result_tables(output, significant_digits):
                 ),
             })
 
-        # BayeSymX stores JMP on the log scale.
+        # HierBOSSS stores JMP on the log scale.
         raw_row["JMP"] = raw["log_JMP"]
         raw_rows.append(raw_row)
 
@@ -618,7 +618,7 @@ def _print_result_tables(output, significant_digits):
     )
     print(
         _style_text(
-            f"✓ {BAYESYMX_CONSOLE_LABEL} analysis complete",
+            f"✓ {HierBOSSS_CONSOLE_LABEL} analysis complete",
             "1;32",
             color_enabled,
         )
@@ -642,7 +642,7 @@ def _print_parallel_launch_banner(
     opset,
 ):
     """Print an elegant summary before parallel MCMC begins."""
-    title = f"Running {BAYESYMX_CONSOLE_LABEL}"
+    title = f"Running {HierBOSSS_CONSOLE_LABEL}"
 
     operator_names = [
         op["name"] if isinstance(op, dict) else str(op)
@@ -678,7 +678,7 @@ def _print_parallel_launch_banner(
     print()
     
 
-def run_bayesymx(
+def run_HierBOSSS(
     X_train,
     y_train,
     K,
@@ -712,7 +712,7 @@ def run_bayesymx(
     trace_plot_dpi=300,
 ):
     """
-    Run parallel BayeSymX chains and return the results as one JSON string.
+    Run parallel HierBOSSS chains and return the results as one JSON string.
 
     Required inputs
     ---------------
@@ -721,7 +721,7 @@ def run_bayesymx(
     y_train
         Training response vector with shape (n_train,).
     K
-        Number of trees in each raw BayeSymX forest.
+        Number of trees in each raw HierBOSSS forest.
     maxdepth
         Maximum tree depth.
     seeds
@@ -858,7 +858,7 @@ def run_bayesymx(
                 "y_test must contain only finite values."
             )
 
-    model = BayeSymX_MCMC(
+    model = HierBOSSS_MCMC(
         X=X_train,
         y=y_train,
         K=K,

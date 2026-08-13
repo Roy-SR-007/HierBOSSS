@@ -1,7 +1,7 @@
 #############################
-# init file of BayeSymX
+# init file of HierBOSSS
 #############################
 
 # required imports
 
-from .run_BayeSymX import *
+from .run_HierBOSSS import *
