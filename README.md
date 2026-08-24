@@ -46,7 +46,7 @@
 For a symbolic forest containing $K$ symbolic trees representing expressions (constructed recursively from features and operators), `HierBOSSS` models the response as
 
 $$
-y_i = \beta_0 + \sum_{j=1}^{K}\beta_j \operatorname{ ev}[T_j](x_i) + \varepsilon_i,
+y_i = \beta_0 + \sum_{j=1}^{K}\beta_j \operatorname{ ev}[T_j] (x_i) + \varepsilon_i,
 \qquad \varepsilon_i \sim \mathcal N(0, \sigma^2),\; 1\leq i \leq n.
 $$
 
