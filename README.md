@@ -41,6 +41,20 @@
 
 ---
 
+<div align="center">
+
+## `HierBOSSS` in 73 seconds
+
+<!-- INLINE-VIDEO: replace this line with the GitHub user-attachments URL of assets/HierBOSSS_brag_video.mp4 -->
+
+<a href="assets/HierBOSSS_brag_video.mp4"><b>Watch the 73-second HierBOSSS video</b></a>
+
+<sub>Brag video made with <a href="https://claude.ai">Claude</a> by Anthropic, using <a href="https://claude.com/claude-code">Claude Code</a>. See <a href="#acknowledgements">Acknowledgements</a>.</sub>
+
+</div>
+
+---
+
 ## Overview of the `HierBOSSS` model
 
 For a symbolic forest containing $K$ symbolic trees representing expressions (constructed recursively from features and operators), `HierBOSSS` models the response as
@@ -412,6 +426,12 @@ result
         ├── train_metrics
         └── test_metrics
 ```
+
+---
+
+## Acknowledgements
+
+**Brag video made with [Claude](https://claude.ai).** The `HierBOSSS` brag video above was created with [Claude](https://claude.ai) by Anthropic: planned with Claude and built with [Claude Code](https://claude.com/claude-code) using [Remotion](https://www.remotion.dev/). Music: "[Decisions in the Static](https://pixabay.com/music/acoustic-group-decisions-in-the-static-496814/)" via [Pixabay](https://pixabay.com/), used under the Pixabay Content License.
 
 ---
 
