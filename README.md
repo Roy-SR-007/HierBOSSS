@@ -45,7 +45,11 @@
 
 ## `HierBOSSS` in 73 seconds
 
-<!-- INLINE-VIDEO: replace this line with the GitHub user-attachments URL of assets/HierBOSSS_brag_video.mp4 -->
+
+
+https://github.com/user-attachments/assets/fa97c4b1-6adb-462f-8ed3-594a790a033d
+
+<sub>Unmute the player for the soundtrack.</sub>
 
 <a href="assets/HierBOSSS_brag_video.mp4"><b>Watch the 73-second HierBOSSS video</b></a>
 
